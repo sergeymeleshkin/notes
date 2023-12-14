@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Posts\PostsCacheRepository;
+use App\Repositories\Posts\PostsRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(PostsRepositoryInterface::class, PostsCacheRepository::class);
     }
 
     /**
