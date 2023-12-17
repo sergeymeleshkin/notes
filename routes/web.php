@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
+
+// alias web:restart='cd ~/Документы/commands && sh web-restart.sh'
+// alias web:stop='cd ~/Документы/commands && sh web-stop.sh'
+// alias web:start='cd ~/Документы/commands && sh web-start.sh'
