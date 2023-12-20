@@ -1,0 +1,12 @@
+.table-auto {
+    @apply table border divide-y divide-gray-200 w-full;
+}
+.table-auto tbody {
+    @apply bg-white divide-y divide-gray-200;
+}
+.table-auto th {
+    @apply px-6 py-3 text-left font-medium;
+}
+.table-auto td {
+    @apply px-6 py-4 whitespace-nowrap;
+}

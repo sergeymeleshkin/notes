@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\Forms\FeedbackFormController;
+use App\Http\Controllers\Api\GroupUsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::name('forms.')->prefix('forms')->group(function() {
+    Route::resource('feedback', FeedbackFormController::class)->withTrashed();
+});
+
+Route::name('groups.')->prefix('groups')->group(function() {
+    Route::resource('users', GroupUsersController::class)->withTrashed();
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/test', function () {
+    $users = User::with('groups:name')
+        ->get();
+    return response()->json($users);
+});
 
 Route::get('/', function () {
     return view('app');
 });
 
-// alias web:restart='cd ~/Документы/commands && sh web-restart.sh'
-// alias web:stop='cd ~/Документы/commands && sh web-stop.sh'
-// alias web:start='cd ~/Документы/commands && sh web-start.sh'
