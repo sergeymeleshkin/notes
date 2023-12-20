@@ -56,6 +56,11 @@ return [
             'throw' => false,
         ],
 
+        'resources' => [
+            'driver' => 'local',
+            'root' => resource_path(),
+        ],
+
     ],
 
     /*
