@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use App\Http\Kernel;
-use App\Repositories\GroupUsers\GroupUsersCacheRepository;
-use App\Repositories\GroupUsers\GroupUsersRepositoryInterface;
 use Carbon\CarbonInterval;
+use Domain\Auth\Repositories\GroupUsers\GroupUsersCacheRepository;
+use Domain\Auth\Repositories\GroupUsers\GroupUsersRepositoryInterface;
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;

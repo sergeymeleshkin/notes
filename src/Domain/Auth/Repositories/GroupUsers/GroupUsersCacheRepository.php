@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Repositories\GroupUsers;
+namespace Domain\Auth\Repositories\GroupUsers;
 use Illuminate\Cache\CacheManager;
+
 class GroupUsersCacheRepository implements GroupUsersRepositoryInterface
 {
     protected GroupUsersRepository $repo;

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Repositories\GroupUsers;
+namespace Domain\Auth\Repositories\GroupUsers;
+
 interface GroupUsersRepositoryInterface
 {
     public function get();

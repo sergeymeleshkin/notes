@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\GroupUsers;
+namespace Domain\Auth\Repositories\GroupUsers;
 use Domain\Auth\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
