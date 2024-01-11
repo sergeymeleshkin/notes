@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Http\Kernel;
+use App\Repositories\GroupUsers\GroupUsersCacheRepository;
+use App\Repositories\GroupUsers\GroupUsersRepositoryInterface;
+use Carbon\CarbonInterval;
+use Illuminate\Database\Connection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +17,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(
+            GroupUsersRepositoryInterface::class,
+            GroupUsersCacheRepository::class
+        );
+
+        if ($this->app->environment('local')) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+            $this->app->register(TelescopeServiceProvider::class);
+        }
     }
 
     /**
@@ -19,6 +33,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        DB::whenQueryingForLongerThan(1, function ( Connection $connection) {
+            logger()
+                ->channel('telegram')
+                ->debug('whenQueryingForLongerThan:' . $connection->query()->toSql());
+        });
+
+        $kernel = app(Kernel::class);
+        $kernel->whenRequestLifecycleIsLongerThan(
+            CarbonInterval::millisecond(9),
+            function (){
+                logger()
+                    ->channel('telegram')
+                    ->debug('whenRequestLifecycleIsLongerThan:' . request()->url());
+            }
+        );
     }
 }

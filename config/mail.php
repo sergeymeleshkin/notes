@@ -131,4 +131,8 @@ return [
         ],
     ],
 
+    'to' => [
+        'admin' => env('MAIL_TO_ADMIN', 'hello@example.com')
+    ]
+
 ];

@@ -1,0 +1,8 @@
+{
+    "list": [
+        { "name": "Ирина", "email": "irina@domain.loc", "password": "_X@fs1" },
+        { "name": "Харитон", "email": "harison@domain.loc", "password": "_X@fs2" },
+        { "name": "Ольга", "email": "olga@domain.loc", "password": "_X@fs3" },
+        { "name": "Илья", "email": "ilya@domain.loc", "password": "_X@fs4" }
+    ]
+}
