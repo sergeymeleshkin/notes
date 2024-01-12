@@ -8,3 +8,6 @@
 <br>
 <p>https://t.me/x2c8u</p>
 
+![screen_mobile_20240112](https://github.com/sergeymeleshkin/notes/assets/73048206/38a99034-ef4c-4c31-b55d-fff2f1024e42)
+
+
